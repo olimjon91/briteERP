@@ -1,4 +1,4 @@
-package fuctional_testing;
+package fuctional_testing.CRM;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -14,7 +14,7 @@ public class CreateAndDeleteOpportunity extends TestBase {
 
     public void createOpportunity() throws InterruptedException {
         driver.manage().window().maximize();
-        login(driver);
+        loginAs("pos_manager");
         highlight(driver.findElement(By.xpath("//span[contains(text(), 'CRM')]"))).click();
         highlight(driver.findElement(By.xpath("//button[contains(text(), 'Create')]"))).click();
         highlight(driver.findElement(By.cssSelector("input[placeholder='e.g. Customer Deal']"))).sendKeys("New Opportunity");

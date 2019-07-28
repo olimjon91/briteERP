@@ -11,13 +11,14 @@ import java.util.concurrent.TimeUnit;
 public class TestBase {
 
     protected WebDriver driver;
-    protected Actions actions;
-    protected WebDriverWait wait;
+    protected static Actions actions;
+    protected static WebDriverWait wait;
 
     @BeforeMethod
     public void setUpMethod() throws InterruptedException {
         driver = Driver.get();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().pageLoadTimeout(10,TimeUnit.SECONDS);
         actions = new Actions(driver);
         driver.get(ConfigurationReader.get("url"));
         wait = new WebDriverWait(driver, 10);

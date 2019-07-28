@@ -1,4 +1,4 @@
-package fuctional_testing;
+package fuctional_testing.Perchases;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
