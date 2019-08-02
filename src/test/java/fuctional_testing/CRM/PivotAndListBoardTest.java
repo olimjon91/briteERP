@@ -13,6 +13,7 @@ import java.util.*;
 public class PivotAndListBoardTest extends TestBase {
     @Test
     public void verifyingTableInListAndPivotView() {
+        driver.manage().window().maximize();
         ERP.loginAs("sales_manager");
         ERP.clickOnModule("CRM");
         WebElement pivot = driver.findElement(By.xpath("//button[@aria-label='pivot']"));
